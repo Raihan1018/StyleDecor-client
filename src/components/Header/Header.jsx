@@ -24,6 +24,21 @@ const Header = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/services"
+          onClick={handleClose}
+          className={({ isActive }) =>
+            `px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 ${
+              isActive
+                ? "text-blue-500 bg-white/10 backdrop-blur border border-blue-400/30 shadow-sm "
+                : "hover:text-blue-400 hover:bg-white/5"
+            }`
+          }
+        >
+          Services
+        </NavLink>
+      </li>
 
       <li>
         <NavLink
