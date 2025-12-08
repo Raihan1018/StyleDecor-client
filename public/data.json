@@ -1,0 +1,232 @@
+[
+  {
+    "category": "Assembly",
+    "title": "Basic",
+    "price": 400,
+    "discount": 3,
+    "features": [
+      "Furniture Assembly (Small Items)",
+      "Shelf & Rack Setup",
+      "Basic Tool Usage",
+      "Minor Adjustments & Tightening"
+    ]
+  },
+  {
+    "category": "Assembly",
+    "title": "Standard",
+    "price": 900,
+    "discount": 5,
+    "features": [
+      "All Basic Plan Services",
+      "Bed, Wardrobe & Table Assembly",
+      "TV Stand & Cabinet Setup",
+      "Curtain Rod & Wall Mount Fittings",
+      "Safety Check After Installation"
+    ]
+  },
+  {
+    "category": "Assembly",
+    "title": "Premium",
+    "price": 1600,
+    "discount": 7,
+    "features": [
+      "All Standard Plan Services",
+      "Full Room/Office Furniture Assembly",
+      "Custom Installation Support",
+      "Heavy Item Assembly (Large Wardrobe, Desk)",
+      "Emergency Same-Day Support"
+    ]
+  },
+  {
+    "category": "Cleaning",
+    "title": "Basic",
+    "price": 700,
+    "discount": 3,
+    "features": [
+      "Room Dusting & Sweeping",
+      "Surface Cleaning",
+      "Trash Removal",
+      "Basic Bathroom Cleaning"
+    ]
+  },
+  {
+    "category": "Cleaning",
+    "title": "Standard",
+    "price": 1500,
+    "discount": 5,
+    "features": [
+      "All Basic Plan Services",
+      "Floor Mopping & Deep Dusting",
+      "Kitchen Surface Cleaning",
+      "Bathroom Deep Clean",
+      "Window Glass & Fan Cleaning"
+    ]
+  },
+  {
+    "category": "Cleaning",
+    "title": "Premium",
+    "price": 3000,
+    "discount": 7,
+    "features": [
+      "All Standard Plan Services",
+      "Full Home Deep Cleaning",
+      "Carpet & Sofa Cleaning",
+      "Appliance Exterior Cleaning",
+      "Balcony & Outdoor Cleaning",
+      "Same-Day Service Available"
+    ]
+  },
+  {
+    "category": "Electrical",
+    "title": "Basic",
+    "price": 500,
+    "discount": 3,
+    "features": [
+      "Light & Fan Checkup & Repair",
+      "Minor Wiring Fixes",
+      "Switch & Socket Checkup",
+      "Circuit Breaker Testing"
+    ]
+  },
+  {
+    "category": "Electrical",
+    "title": "Standard",
+    "price": 1000,
+    "discount": 5,
+    "features": [
+      "All Basic Plan Services",
+      "New Switch/Socket Installation",
+      "Ceiling Fan Installation/Repair",
+      "Light Holder/Fitting Installation",
+      "Load Test & Safety Check"
+    ]
+  },
+  {
+    "category": "Electrical",
+    "title": "Premium",
+    "price": 2000,
+    "discount": 7,
+    "features": [
+      "All Standard Plan Services",
+      "Full House Wiring Checkup",
+      "Distribution Board Maintenance",
+      "Appliance Connection Support (AC, Geyser, Fridge)",
+      "Emergency Electrical Support (Same Day)"
+    ]
+  },
+  {
+    "category": "Gardening",
+    "title": "Basic",
+    "price": 600,
+    "discount": 3,
+    "features": [
+      "Plant Watering & Care",
+      "Basic Weed Removal",
+      "Garden Sweeping",
+      "Small Plant Trimming"
+    ]
+  },
+  {
+    "category": "Gardening",
+    "title": "Standard",
+    "price": 1200,
+    "discount": 5,
+    "features": [
+      "All Basic Plan Services",
+      "Lawn Mowing",
+      "Hedge & Bush Trimming",
+      "Soil Fertilizing",
+      "Pest Checkup"
+    ]
+  },
+  {
+    "category": "Gardening",
+    "title": "Premium",
+    "price": 2200,
+    "discount": 7,
+    "features": [
+      "All Standard Plan Services",
+      "Garden Layout Improvement",
+      "Planting New Plants & Pots",
+      "Pest Treatment Support",
+      "Seasonal Garden Maintenance"
+    ]
+  },
+  {
+    "category": "Painting",
+    "title": "Basic",
+    "price": 800,
+    "discount": 3,
+    "features": [
+      "Single Room Painting",
+      "Spot Fix & Touch-Ups",
+      "Basic Wall Priming",
+      "Small Crack Filling"
+    ]
+  },
+  {
+    "category": "Painting",
+    "title": "Standard",
+    "price": 1800,
+    "discount": 5,
+    "features": [
+      "All Basic Plan Services",
+      "Multiple Room Painting",
+      "Quality Wall Primer & Finishing",
+      "Door & Window Frame Painting",
+      "Color Consultation"
+    ]
+  },
+  {
+    "category": "Painting",
+    "title": "Premium",
+    "price": 3500,
+    "discount": 7,
+    "features": [
+      "All Standard Plan Services",
+      "Full Home/Office Painting",
+      "Texture & Designer Painting",
+      "Waterproof Coating",
+      "Premium Color Materials",
+      "Same-Day Assistance Support"
+    ]
+  },
+  {
+    "category": "Plumbing",
+    "title": "Basic",
+    "price": 500,
+    "discount": 3,
+    "features": [
+      "Leakage Check & Repair",
+      "Tap & Shower Fixing",
+      "Clog Removal (Basic)",
+      "Pipe Joint Tightening"
+    ]
+  },
+  {
+    "category": "Plumbing",
+    "title": "Standard",
+    "price": 1100,
+    "discount": 5,
+    "features": [
+      "All Basic Plan Services",
+      "New Tap/Shower Installation",
+      "Washbasin & Commode Servicing",
+      "Pipeline Blockage Fix",
+      "Water Pressure Testing"
+    ]
+  },
+  {
+    "category": "Plumbing",
+    "title": "Premium",
+    "price": 2000,
+    "discount": 7,
+    "features": [
+      "All Standard Plan Services",
+      "Full Bathroom Plumbing Check",
+      "Water Line Replacement Support",
+      "Motor/Pump Connection Support",
+      "Emergency Plumbing Support (Same Day)"
+    ]
+  }
+]
