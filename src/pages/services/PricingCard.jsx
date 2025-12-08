@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -13,7 +11,7 @@ const PricingCard = ({ title, price, discount, features = [], isYearly }) => {
       transition={{ duration: 0.6 }}
       className="relative card bg-base-100 shadow-xl border hover:shadow-2xl transition p-6 flex flex-col"
     >
-      {/* 🔥 Discount Badge (Yearly Only) */}
+      {/*  Discount Badge (Yearly Only) */}
       {isYearly && (
         <motion.div
           initial={{ scale: 0 }}
