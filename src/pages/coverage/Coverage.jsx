@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useLoaderData } from "react-router-dom";
-
+import { motion } from "framer-motion";
 // Component to fly to a location when coordinates change
 const FlyToLocation = ({ position }) => {
   const map = useMap();
@@ -95,9 +95,22 @@ const Coverage = () => {
       <div className="mb-8 text-center">
         <p className="text-2xl md:text-3xl font-semibold">
           We are available in{" "}
-          <span className="italic font-bold text-primary">
+          <motion.span
+            className="italic font-bold text-violet-600 inline-block"
+            animate={{
+              scale: [1, 1.15, 1],
+              y: [0, -5, 0],
+              rotate: [0, 5, -5, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+          >
             {serviceCenters.length}
-          </span>{" "}
+          </motion.span>{" "}
           centers
         </p>
       </div>
