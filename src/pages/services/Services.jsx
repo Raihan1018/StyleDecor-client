@@ -77,7 +77,7 @@ const Services = () => {
         At a glance our services
       </h3>
 
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8 px-4">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 px-4 my-5">
         {/* --- Type Animation Section --- */}
         <div className="text-center mt-4 h-16 w-full md:w-1/2">
           <TypeAnimation
@@ -121,7 +121,9 @@ const Services = () => {
           </Swiper>
         </motion.div>
       </div>
-
+      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl py-3 capitalize font-bold text-gray-800">
+        Choose our Services{" "}
+      </h2>
       {/* Service details */}
       <div>
         <Tabs>
@@ -130,6 +132,14 @@ const Services = () => {
               <img
                 className="w-11"
                 src="https://img.icons8.com/?size=100&id=V2mXDW29kocg&format=png&color=000000"
+                alt="Cleaning Services"
+                title="Cleaning Services"
+              />
+            </Tab>
+            <Tab>
+              <img
+                className="w-11"
+                src="https://img.icons8.com/?size=100&id=nx8bQ5LGq0IO&format=png&color=000000"
                 alt="Electrical Services"
                 title="Electrical Services"
               />
@@ -137,25 +147,17 @@ const Services = () => {
             <Tab>
               <img
                 className="w-11"
-                src="https://img.icons8.com/?size=100&id=nx8bQ5LGq0IO&format=png&color=000000"
-                alt="Plumbing Services"
+                src="https://img.icons8.com/?size=100&id=nAJdF6qUI2Ww&format=png&color=000000"
+                alt="Plubming Services"
                 title="Plumbing Services"
               />
             </Tab>
             <Tab>
               <img
                 className="w-11"
-                src="https://img.icons8.com/?size=100&id=nAJdF6qUI2Ww&format=png&color=000000"
-                alt="Furniture Assembly"
-                title="Furniture Assembly"
-              />
-            </Tab>
-            <Tab>
-              <img
-                className="w-11"
                 src="https://img.icons8.com/?size=100&id=Xwqu8cUREfko&format=png&color=000000"
-                alt="Gardening Services"
-                title="Gardening Services"
+                alt="Painting Services"
+                title="Painting Services"
               />
             </Tab>
 
@@ -163,16 +165,16 @@ const Services = () => {
               <img
                 className="w-11"
                 src="https://img.icons8.com/?size=100&id=6s1yiEqYf2tz&format=png&color=000000"
-                alt="Painting Services"
-                title="Painting Services"
+                alt="Assembly Services"
+                title="Assembly Services"
               />
             </Tab>
             <Tab>
               <img
                 className="w-11"
                 src="https://img.icons8.com/?size=100&id=VdgNbHMiugD0&format=png&color=000000"
-                alt="Cleaning Services"
-                title="Cleaning Services"
+                alt="Gardening Services"
+                title="Gardening Services"
               />
             </Tab>
           </TabList>
@@ -180,6 +182,7 @@ const Services = () => {
           <TabPanel>
             <Cleaning />
           </TabPanel>
+
           <TabPanel>
             <Electrical />
           </TabPanel>
@@ -187,6 +190,7 @@ const Services = () => {
           <TabPanel>
             <Plumbing />
           </TabPanel>
+
           <TabPanel>
             <Painting />
           </TabPanel>

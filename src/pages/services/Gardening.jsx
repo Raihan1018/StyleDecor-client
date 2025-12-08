@@ -1,219 +1,84 @@
 import React, { useState } from "react";
+import PricingCard from "./PricingCard";
 
-// Data structure for the gardening plans
-const plansData = [
+const Gardening = () => {
+  const [isYearly, setIsYearly] = useState(false);
+
+  const plans = [
   {
-    name: "Lawn & Trim",
-    priceMonthly: 1000,
+    title: "Basic",
+    price: 600,
+    discount: 3,
     features: [
-      "Lawn mowing and edging",
-      "Hedge and shrub trimming (basic)",
-      "Weed control (surface level)",
-      "Leaf blowing and general tidying",
+      "Plant Watering & Care",
+      "Basic Weed Removal",
+      "Garden Sweeping",
+      "Small Plant Trimming",
     ],
   },
   {
-    name: "Landscape Refresh",
-    priceMonthly: 3000,
-    priceDiscountedMonthly: 2800, // Monthly Discount
+    title: "Standard",
+    price: 1200,
+    discount: 5,
     features: [
-      "Deep weeding and flower bed maintenance",
-      "Pruning and fertilization of key plants",
-      "Soil aeration and top dressing",
-      "Pest and disease management consultation",
-      "Seasonal planting planning",
+      "All Basic Plan Services",
+      "Lawn Mowing",
+      "Hedge & Bush Trimming",
+      "Soil Fertilizing",
+      "Pest Checkup",
     ],
   },
   {
-    name: "Ultimate Garden Care",
-    priceMonthly: 5000,
-    priceDiscountedMonthly: 4700, // Monthly Discount
+    title: "Premium",
+    price: 2200,
+    discount: 7,
     features: [
-      "Custom landscape design input",
-      "Advanced tree and large shrub care",
-      "Irrigation system check and adjustment",
-      "Hardscape cleaning (patios, walkways)",
-      "Quarterly large waste removal",
+      "All Standard Plan Services",
+      "Garden Layout Improvement",
+      "Planting New Plants & Pots",
+      "Pest Treatment Support",
+      "Seasonal Garden Maintenance",
     ],
   },
 ];
 
-// Helper component for the checkmark SVG
-const CheckIcon = ({ className = "w-6 h-6 text-green-600" }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    className={className}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-    ></path>
-  </svg>
-);
-
-// Helper component for individual pricing cards
-const PricingCard = ({ plan, isMonthly, yearlyDiscount, color }) => {
-  const price = plan.priceDiscountedMonthly || plan.priceMonthly;
-  const originalPrice = plan.priceMonthly;
-
-  let displayPrice;
-  let discountedPrice = null;
-  let originalPriceDisplay = null;
-  let timeUnit = "/mo";
-
-  if (isMonthly) {
-    displayPrice = price;
-    if (plan.priceDiscountedMonthly) {
-      originalPriceDisplay = originalPrice;
-    }
-  } else {
-    const annualPrice = price * 12;
-    discountedPrice = Math.round(annualPrice * (1 - yearlyDiscount));
-    displayPrice = discountedPrice;
-    originalPriceDisplay = annualPrice;
-    timeUnit = "/yr";
-  }
-
-  // Dynamic Tailwind classes (Simplified for White Theme)
-  const cardClasses = `
-    relative z-0 flex flex-col items-center p-8 rounded-md 
-    border-2 bg-white transition-all duration-300 ease-in-out
-    transform hover:scale-[1.03] hover:shadow-xl 
-    border-gray-300
-  `;
-  const buttonClasses = `
-    btn px-8 py-3 mt-4 text-lg font-semibold uppercase rounded transition-colors duration-300 text-${color}-500 border-${color}-500 hover:bg-${color}-500 hover:text-white
-  `;
-  const colorClasses = `bg-${color}-600 text-white text-${color}-600`;
-  const discountTextClasses = `text-sm text-center text-green-600 font-semibold mb-2`;
 
   return (
-    <div className={cardClasses}>
-      {/* Name Tag */}
-      <span
-        className={`absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg ${colorClasses
-          .split(" ")
-          .slice(0, 2)
-          .join(" ")}`}
-      >
-        {plan.name}
-      </span>
+    <div className="py-12">
+      <h3 className="text-2xl md:text-3xl lg:text-4xl text-center font-bold mb-6">
+        See Our <span className="text-violet-500">Gardening</span> Pricing Plan
+      </h3>
 
-      {/* Price Display */}
-      <p className="flex items-center justify-center my-6 space-x-2 font-bold mt-16">
-        {originalPriceDisplay && (
-          <span className="text-lg line-through text-gray-700">
-            &nbsp;{originalPriceDisplay.toLocaleString("en-IN")} ৳&nbsp;
-          </span>
-        )}
-        <span
-          className={`pb-2 text-4xl ${colorClasses
-            .split(" ")
-            .slice(2)
-            .join(" ")}`}
+      {/* Toggle */}
+      <div className="flex justify-center items-center gap-4 mb-10">
+        <button
+          onClick={() => setIsYearly(false)}
+          className={`btn ${!isYearly ? "btn-primary" : "btn-outline"}`}
         >
-          {displayPrice.toLocaleString("en-IN")} ৳
-        </span>
-        {isMonthly && <span className="text-lg">{timeUnit}</span>}
-      </p>
+          Monthly
+        </button>
 
-      {/* Annual Discount Note */}
-      {!isMonthly && (
-        <p className={discountTextClasses}>
-          🎉 Save {yearlyDiscount * 100}% Annually!
-        </p>
-      )}
+        <button
+          onClick={() => setIsYearly(true)}
+          className={`btn ${isYearly ? "btn-primary" : "btn-outline"}`}
+        >
+          Yearly
+        </button>
+      </div>
 
-      {/* Features List */}
-      <ul className="flex-1 space-y-2 mb-6 text-left w-full">
-        {plan.features.map((feature, index) => (
-          <li key={index} className="flex items-center space-x-2">
-            <CheckIcon className={`w-6 h-6 text-${color}-600`} />
-            <span className="capitalize">{feature}</span>
-          </li>
+      {/* Pricing Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-16">
+        {plans.map((plan, i) => (
+          <PricingCard
+            key={i}
+            title={plan.title}
+            price={plan.price}
+            discount={plan.discount}
+            features={plan.features}
+            isYearly={isYearly}
+          />
         ))}
-      </ul>
-
-      <button className={buttonClasses}>Subscribe</button>
-    </div>
-  );
-};
-
-const Gardening = () => {
-  const [billingPeriod, setBillingPeriod] = useState("monthly");
-  const isMonthly = billingPeriod === "monthly";
-  const yearlyDiscountRate = 0.05;
-  const color = "green"; // Theme color for Gardening
-
-  // Button classes (Simplified for White Theme)
-  const activeBtnClasses = `px-4 py-1 font-semibold border rounded-l-lg bg-${color}-600 border-${color}-600 text-white transition-colors`;
-  const inactiveBtnClasses = `px-4 py-1 border rounded-r-lg border-${color}-600 text-gray-800 transition-colors`;
-
-  return (
-    <div>
-      <section className="py-6 bg-white text-gray-900">
-        <div className="container mx-auto p-4 sm:p-10">
-          <div className="mb-16 space-y-4 text-center">
-            <h1 className="text-4xl font-semibold leading-tight">
-              Gardening & Lawn Care Pricing
-            </h1>
-            <p className="px-4 sm:px-8 lg:px-24">
-              Keep your yard beautiful and healthy with our specialized
-              gardening services.
-            </p>
-            {/* Toggler Button Group */}
-            <div
-              className={`inline-flex border-2 rounded-lg border-${color}-600`}
-            >
-              <button
-                onClick={() => setBillingPeriod("monthly")}
-                className={
-                  isMonthly
-                    ? activeBtnClasses.replace("rounded-r-lg", "")
-                    : inactiveBtnClasses.replace("rounded-r-lg", "")
-                }
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setBillingPeriod("annually")}
-                className={
-                  !isMonthly
-                    ? activeBtnClasses.replace("rounded-l-lg", "")
-                    : inactiveBtnClasses.replace("rounded-l-lg", "")
-                }
-              >
-                Annually
-              </button>
-            </div>
-            {/* Annual Discount Highlight */}
-            {!isMonthly && (
-              <p className={`text-sm text-${color}-600 font-bold mt-2`}>
-                * You save an extra {yearlyDiscountRate * 100}% with the Annual
-                Plan!
-              </p>
-            )}
-          </div>
-
-          {/* Pricing Cards Grid */}
-          <div className="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap-2 xl:gap-6 lg:grid-cols-3">
-            {plansData.map((plan, index) => (
-              <PricingCard
-                key={index}
-                plan={plan}
-                isMonthly={isMonthly}
-                yearlyDiscount={yearlyDiscountRate}
-                color={color}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };
