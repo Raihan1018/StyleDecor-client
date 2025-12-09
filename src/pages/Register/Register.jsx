@@ -10,10 +10,12 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { auth } from "../../firebase/firebase.init";
 
 const googleProvider = new GoogleAuthProvider();
+
+// Replace with your own ImgBB API Key
+const IMGBB_API_KEY = "YOUR_IMGBB_API_KEY";
 
 const Register = () => {
   const {
@@ -23,6 +25,25 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const [uploading, setUploading] = useState(false);
+
+  // Function to upload image to ImgBB
+  const uploadToImgBB = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+    const response = await fetch(
+      `https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+    const data = await response.json();
+    if (data.success) {
+      return data.data.url;
+    } else {
+      throw new Error("Image upload failed");
+    }
+  };
 
   // TanStack mutation for registration
   const mutation = useMutation({
@@ -38,12 +59,7 @@ const Register = () => {
       let photoURL = null;
       if (photo && photo[0]) {
         setUploading(true);
-        const storageRef = ref(
-          storage,
-          `users/${userCredential.user.uid}/${photo[0].name}`
-        );
-        await uploadBytes(storageRef, photo[0]);
-        photoURL = await getDownloadURL(storageRef);
+        photoURL = await uploadToImgBB(photo[0]);
         setUploading(false);
       }
 
@@ -57,7 +73,7 @@ const Register = () => {
     },
     onSuccess: (user) => {
       toast.success("Registration successful!");
-      reset(); // Reset form after success
+      reset(); // Reset form
     },
     onError: (error) => {
       toast.error(`Registration failed: ${error.message}`);
@@ -70,9 +86,7 @@ const Register = () => {
 
   const handleGoogleLogin = () => {
     signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        toast.success("Google login successful!");
-      })
+      .then((result) => toast.success("Google login successful!"))
       .catch((err) => toast.error(err.message));
   };
 
@@ -202,7 +216,6 @@ const Register = () => {
           </button>
         </form>
 
-        {/* Divider */}
         <div className="divider">OR</div>
 
         {/* Google Login */}
