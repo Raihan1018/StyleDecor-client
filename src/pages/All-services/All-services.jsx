@@ -20,9 +20,8 @@ const getCategoryButtonClasses = (currentFilter, category) => {
     return `${baseClasses} bg-white text-gray-700 border border-gray-300 hover:bg-blue-50 hover:border-blue-500`;
   }
 };
-// ------------------------------------------------------------------------
 
-const Services = () => {
+const AllServices = () => {
   const axiosSecure = useAxiosSecure();
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("All");
@@ -133,9 +132,7 @@ const Services = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <button className="btn bg-blue-600 text-white hover:bg-blue-700 border-none rounded-r-lg">
-                
-              </button>
+              <button className="btn bg-blue-600 text-white hover:bg-blue-700 border-none rounded-r-lg"></button>
             </div>
           </div>
 
@@ -287,4 +284,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default AllServices;

@@ -26,7 +26,7 @@ const Header = () => {
       </li>
       <li>
         <NavLink
-          to="/services"
+          to="/all-services"
           onClick={handleClose}
           className={({ isActive }) =>
             `px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 ${
@@ -36,7 +36,7 @@ const Header = () => {
             }`
           }
         >
-          Services
+          All Services
         </NavLink>
       </li>
 

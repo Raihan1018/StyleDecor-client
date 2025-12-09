@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../pages/Home/Home/Home";
 import Coverage from "../pages/coverage/Coverage";
-import Services from "../pages/services/Services";
+import AllServices from "../pages/All-services/All-services";
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +19,8 @@ export const router = createBrowserRouter([
         Component: Coverage,
       },
       {
-        path: "services",
-        Component: Services,
+        path: "all-services",
+        Component: AllServices,
       },
     ],
   },
