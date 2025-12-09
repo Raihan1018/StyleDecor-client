@@ -36,7 +36,7 @@ const FAQItem = ({ question, answer }) => {
   return (
     <motion.div
       layout
-      className="bg-white shadow-md rounded-xl mb-4 border border-gray-100"
+      className=" shadow-md rounded-xl mb-4 border border-gray-100"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -66,7 +66,7 @@ const FAQItem = ({ question, answer }) => {
 
 const FAQ = () => {
   return (
-    <div className="py-16 px-6 md:px-14 lg:px-28 bg-gray-50">
+    <div className="py-16 px-6 md:px-14 lg:px-28 ">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4">
         Frequently Asked <span className="text-violet-600">Questions</span>
       </h2>
