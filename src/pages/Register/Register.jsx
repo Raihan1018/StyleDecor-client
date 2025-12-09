@@ -15,7 +15,7 @@ import { auth } from "../../firebase/firebase.init";
 const googleProvider = new GoogleAuthProvider();
 
 // Replace with your own ImgBB API Key
-const IMGBB_API_KEY = "YOUR_IMGBB_API_KEY";
+const IMGBB_API_KEY = import.meta.env.VITE_image_host_key;
 
 const Register = () => {
   const {
