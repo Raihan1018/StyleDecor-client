@@ -8,6 +8,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -81,9 +82,9 @@ const WhyChooseUs = () => {
         <p className="text-xl font-medium mb-4">
           Your satisfaction is our top priority.
         </p>
-        <button className="btn bg-violet-500 text-white px-8 py-3 rounded-full text-lg">
+        <Link to={'all-services'} className="btn bg-violet-500 text-white px-8 py-3 rounded-full text-lg">
           Book a Service Now
-        </button>
+        </Link>
       </div>
     </div>
   );

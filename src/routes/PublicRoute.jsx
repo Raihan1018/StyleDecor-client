@@ -5,6 +5,9 @@ import Coverage from "../pages/coverage/Coverage";
 import AllServices from "../pages/All-services/All-services";
 import AddServices from "./PrivateRoute/AdminRoute/AddServices";
 import ServicesList from "./PrivateRoute/AdminRoute/ServicesList";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +22,18 @@ export const router = createBrowserRouter([
         path: "coverage",
         loader: () => fetch("../coverage.json").then((res) => res.json()),
         Component: Coverage,
+      },
+      {
+        path: "login",
+        Component: Login,
+      },
+      {
+        path: "register",
+        Component: Register,
+      },
+      {
+        path: "user-profile",
+        Component: UserProfile,
       },
       {
         path: "all-services",

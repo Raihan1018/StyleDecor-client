@@ -4,6 +4,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -84,12 +85,12 @@ const Banner = () => {
                   {slide.subtitle}
                 </p>
 
-                <button
+                <Link to={'all-services'}
                   className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-lg font-semibold w-fit shadow-lg animate-fadeInUp"
                   style={{ animationDelay: "0.6s" }}
                 >
                   Book Service
-                </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

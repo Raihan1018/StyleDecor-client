@@ -27,7 +27,7 @@ const MeetOurExperts = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="py-16 px-6 md:px-14 lg:px-28 bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="py-16 px-6 md:px-14 lg:px-28 ">
       {/* Section Header */}
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center mb-4">
         Meet Our <span className="text-violet-600">Experts</span>
@@ -43,7 +43,7 @@ const MeetOurExperts = () => {
           <motion.div
             key={expert._id || index}
             whileHover={{ scale: 1.08, rotate: 1 }}
-            className="w-64 mx-3 flex-shrink-0 backdrop-blur-md bg-white/30 shadow-xl hover:shadow-2xl border border-gray-200 rounded-3xl p-6 flex flex-col items-center transition-all duration-300"
+            className="w-64 mx-3 flex-shrink-0 backdrop-blur-md bg-white/30 shadow-xl hover:shadow-2xl border  rounded-3xl p-6 flex flex-col items-center transition-all duration-300"
           >
             {/* Expert Photo */}
             <div className="relative w-32 h-32 mb-4">

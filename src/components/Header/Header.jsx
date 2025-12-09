@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../context/AuthContext/AuthContext";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, signOutUser } = useContext(AuthContext);
 
   const handleClose = () => setIsOpen(false);
+
+  const handleLogout = async () => {
+    try {
+      await signOutUser();
+      toast.success("Logged out successfully!");
+    } catch (error) {
+      toast.error("Logout failed: " + error.message);
+    }
+  };
 
   const links = (
     <>
@@ -39,7 +52,6 @@ const Header = () => {
           All Services
         </NavLink>
       </li>
-
       <li>
         <NavLink
           to="/coverage"
@@ -99,10 +111,50 @@ const Header = () => {
       </div>
 
       {/* Right Section */}
-      <div className="navbar-end">
-        <button className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:from-blue-600 hover:to-blue-700 hover:shadow-xl transition-all duration-300">
-          Login
-        </button>
+      <div className="navbar-end flex items-center gap-3">
+        {user ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="cursor-pointer">
+              {user.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  alt="User Avatar"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
+                />
+              ) : (
+                <FaUserCircle className="w-10 h-10 text-gray-300" />
+              )}
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content mt-2 p-2 shadow bg-white rounded-box w-40 flex flex-col gap-2"
+            >
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="w-full text-left px-2 py-1 hover:bg-gray-100 rounded"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <>
+            <Link
+              to="/login"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:from-blue-600 hover:to-blue-700 hover:shadow-xl transition-all duration-300"
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="px-6 py-2.5 rounded-xl bg-white/20  font-semibold shadow-lg hover:bg-white/30 transition-all duration-300"
+            >
+              Register
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
