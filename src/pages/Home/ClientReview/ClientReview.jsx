@@ -78,7 +78,7 @@ const ClientReview = () => {
                     })}
                   </p>
                 )}
-
+{/*  */}
                 {/* Rating Stars */}
                 <div className="flex mb-4">
                   {Array.from({ length: review.rating || 5 }).map((_, idx) => (
