@@ -3,6 +3,8 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../pages/Home/Home/Home";
 import Coverage from "../pages/coverage/Coverage";
 import AllServices from "../pages/All-services/All-services";
+import AddServices from "./PrivateRoute/AdminRoute/AddServices";
+import ServicesList from "./PrivateRoute/AdminRoute/ServicesList";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ export const router = createBrowserRouter([
       {
         path: "all-services",
         Component: AllServices,
+      },
+      {
+        path: "add-services",
+        Component: AddServices,
+      },
+      {
+        path: "service-list",
+        Component: ServicesList,
       },
     ],
   },
